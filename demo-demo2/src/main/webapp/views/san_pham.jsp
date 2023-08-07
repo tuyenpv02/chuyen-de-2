@@ -25,6 +25,34 @@
             }
         </style>
     <body>
+
+<%--    <jsp:include page="header.jsp"></jsp:include>--%>
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/home">Sách Hay</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <c:if test="${sessionScope.acc != null}">
+                <li class="nav-item"><a class="nav-link" href="/logout"> Logout </a></li>
+            </c:if>
+            <c:if test="${sessionScope.acc == null}">
+                <li class="nav-item"><a class="nav-link" href="/login"> Login </a></li>
+            </c:if>
+
+            <li class="nav-item"><a class="nav-link" href="/san-pham"> sản phẩm </a></li>
+        </ul>
+
+
+<%--        <ul class="nav navbar-nav navbar-right">--%>
+<%--            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>--%>
+<%--            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>--%>
+<%--        </ul>--%>
+    </div>
+</nav>
+
+
         <div class="container">
             <div class="table-wrapper">
                 <div class="table-title">
@@ -34,7 +62,7 @@
                         </div>
                         <div class="col-sm-6">
                             <a href="#addEmployeeModal"  class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Product</span></a>
-                            <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>						
+                            <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>
                         </div>
                     </div>
                 </div>
@@ -98,11 +126,11 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <form action="/them-san-pham" method="post">
-                        <div class="modal-header">						
+                        <div class="modal-header">
                             <h4 class="modal-title">Add Product</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                         </div>
-                        <div class="modal-body">					
+                        <div class="modal-body">
                             <div class="form-group">
                                 <label>Name</label>
                                 <input name="name" type="text" class="form-control" required>
@@ -130,7 +158,7 @@
                             <div class="form-group">
                                 <label>Category</label>
                                 <select name="cateID" class="form-select" aria-label="Default select example">
-                              
+
                                     <c:forEach items="${lstCategory }" var="ct">
                                     	<option value="${ct.cid}">${ct.cname }</option>
                                     	</c:forEach>
@@ -151,11 +179,11 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <form>
-                        <div class="modal-header">						
+                        <div class="modal-header">
                             <h4 class="modal-title">Edit Employee</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                         </div>
-                        <div class="modal-body">					
+                        <div class="modal-body">
                             <div class="form-group">
                                 <label>Name</label>
                                 <input type="text" class="form-control" required>
@@ -171,7 +199,7 @@
                             <div class="form-group">
                                 <label>Phone</label>
                                 <input type="text" class="form-control" required>
-                            </div>					
+                            </div>
                         </div>
                         <div class="modal-footer">
                             <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
@@ -186,11 +214,11 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <form>
-                        <div class="modal-header">						
+                        <div class="modal-header">
                             <h4 class="modal-title">Delete Product</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                         </div>
-                        <div class="modal-body">					
+                        <div class="modal-body">
                             <p>Are you sure you want to delete these Records?</p>
                             <p class="text-warning"><small>This action cannot be undone.</small></p>
                         </div>
@@ -204,7 +232,7 @@
         </div>
         <script src="js/manager.js" type="text/javascript"></script>
         <script>
-               
+
         </script>
     </body>
 </html>
