@@ -46,7 +46,7 @@
 </nav>
 <section class="jumbotron text-center">
     <div class="container">
-<%--        ${login}--%>
+        <%--        ${login}--%>
         <%--        <h1 class="jumbotron-heading">Siêu thị giày chất lượng cao</h1>--%>
         <%--        <p class="lead text-muted mb-0">Uy tín tạo nên thương hiệu với hơn 10 năm cung cấp các sản phầm giày nhập từ Trung Quốc</p>--%>
     </div>

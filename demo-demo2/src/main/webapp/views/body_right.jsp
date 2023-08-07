@@ -23,7 +23,7 @@
                         <a href="/detail/${sp.ma}" class="text-reset">
                             <h5 class="card-title mb-2"> ${sp.name} </h5>
                         </a>
-                        <h6 href="" class="text-reset "> <p>${sp.title} </p></h6>
+                        <h6 href="" class="text-reset "><p>${sp.title} </p></h6>
                         <h6 class="mb-3 price">${sp.price}$</h6>
                         <div class="col">
                             <a href="/gio-hang/add/${sp.ma}" class="btn btn-success btn-block">Add to cart</a>
